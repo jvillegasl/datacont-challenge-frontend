@@ -1,4 +1,6 @@
 import { IBook } from "@/interfaces";
+import { Table } from "react-bootstrap";
+import Button from "react-bootstrap/Button";
 import { Link } from "react-router-dom";
 
 type BooksTableProps = {
@@ -7,13 +9,13 @@ type BooksTableProps = {
 
 export function BooksTable({ books }: BooksTableProps) {
     return (
-        <table>
+        <Table className="table-dark table-striped">
             <thead>
                 <tr>
                     <th>ID</th>
-                    <th>Title</th>
-                    <th>Author</th>
-                    <th>Actions</th>
+                    <th className="text-center">Title</th>
+                    <th className="text-center">Author</th>
+                    <th className="text-center">Actions</th>
                 </tr>
             </thead>
 
@@ -22,15 +24,17 @@ export function BooksTable({ books }: BooksTableProps) {
                     return (
                         <tr key={i}>
                             <td>{book.id}</td>
-                            <td>{book.title}</td>
-                            <td>{book.author}</td>
-                            <td>
-                                <Link to={`details/${book.id}`}>View</Link>
+                            <td className="text-center">{book.title}</td>
+                            <td className="text-center">{book.author}</td>
+                            <td className="text-center">
+                                <Link to={`details/${book.id}`}>
+                                    <Button variant="primary">View</Button>
+                                </Link>
                             </td>
                         </tr>
                     );
                 })}
             </tbody>
-        </table>
+        </Table>
     );
 }
