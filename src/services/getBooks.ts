@@ -1,7 +1,7 @@
 import { IBook } from "@/interfaces";
 
 export function getBooks() {
-    const endpoint = import.meta.env.VITE_BACKEND_URL + "api/books";
+    const endpoint = import.meta.env.VITE_BACKEND_URL + "books";
 
     return fetch(endpoint).then((data) => {
         if (!data.ok) {
