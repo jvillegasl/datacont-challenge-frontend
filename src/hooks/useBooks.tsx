@@ -20,9 +20,5 @@ export function useBooks() {
             .finally(() => setIsLoading(false));
     }, []);
 
-    return {
-        books,
-        isLoading,
-        hasFailed,
-    };
+    return { books, isLoading, hasFailed };
 }
