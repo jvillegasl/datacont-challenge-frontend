@@ -1,29 +1,14 @@
-import {
-    Navigate,
-    RouterProvider,
-    createBrowserRouter,
-} from "react-router-dom";
+import { RouterProvider } from "react-router-dom";
 
 import "./App.scss";
-import { BookDetails, Home } from "./pages";
-
-const router = createBrowserRouter([
-    {
-        path: "/details/:id",
-        element: <BookDetails />,
-    },
-    {
-        path: "/",
-        element: <Home />,
-    },
-    {
-        path: "*",
-        element: <Navigate to={"/"} />,
-    },
-]);
+import { router } from "./router";
 
 function App() {
-    return <RouterProvider router={router} />;
+    return (
+        <div className="app bg-dark">
+            <RouterProvider router={router} />
+        </div>
+    );
 }
 
 export default App;
