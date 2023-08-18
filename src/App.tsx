@@ -5,12 +5,12 @@ import {
 } from "react-router-dom";
 
 import "./App.scss";
-import { Book, Home } from "./pages";
+import { BookDetails, Home } from "./pages";
 
 const router = createBrowserRouter([
     {
         path: "/details/:id",
-        element: <Book />,
+        element: <BookDetails />,
     },
     {
         path: "/",
