@@ -9,9 +9,9 @@ export function BookDetails() {
     return (
         <>
             {isLoading ? (
-                "Loading..."
+                <span className="text-white fs-5">Loading...</span>
             ) : hasFailed || !book ? (
-                "Failed"
+                <span className="text-danger fs-5">Failed to fetch data</span>
             ) : (
                 <BookForm book={book} />
             )}
