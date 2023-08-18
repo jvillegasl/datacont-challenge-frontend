@@ -1,3 +1,4 @@
+import { BookForm } from "@/components";
 import { useBook } from "@/hooks";
 import { useParams } from "react-router-dom";
 
@@ -7,11 +8,13 @@ export function BookDetails() {
 
     return (
         <>
-            {isLoading
-                ? "Loading..."
-                : hasFailed
-                ? "Failed"
-                : JSON.stringify(book)}
+            {isLoading ? (
+                "Loading..."
+            ) : hasFailed || !book ? (
+                "Failed"
+            ) : (
+                <BookForm book={book} />
+            )}
         </>
     );
 }
